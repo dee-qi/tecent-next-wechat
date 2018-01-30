@@ -1,3 +1,5 @@
+<!--author:7d
+腾讯NEXT前端特训班结业项目-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,20 +9,19 @@
     <link rel="stylesheet" type="text/css" 
     href='http://8.url.cn/edu/classroom/assets/lib/reset.css'>
     <link rel="stylesheet" href="style.css">
-    <link rel="javascript" src="js.js">
 </head>
 <body>
-    <section class="first-page hide">
-        <p class="first-page-text">一段话</p>
+    <section class="first-page">
+        <p class="first-page-text">你妈妈出去上班了，你早上睡到了十点半，起来打了一个小时LOL，现在你妈妈马上要回来了...</p>
         <button class="first-page-button">点击继续</button>
     </section>
-    <section class="chat-page">
+    <section class="chat-page hide">
         <header class="nav">
             <div class="nav-back">
                 <i class="icon icon-back"></i>
                 <span>微信</span>
             </div>
-            <h1 class="nav-name">老妈</h1>
+            <h1 class="nav-name">暴躁的老妈</h1>
             <div class="nav-person">
                 <i class="icon icon-person"></i>
             </div>
@@ -44,53 +45,43 @@
                 <img class="avatar" src="./avatar/avatar1.jpg" alt="头像1">
                 <span class="message-bubble-angle"></span>
                 <div class="message-bubble">
-                    <p>那你吃早饭了吗！！！？？？</p>
+                    <p>你吃早饭了吗！！！？？？</p>
                 </div>
             </div>
-            <footer class="footer">
-                    <span class="footer-round footer-voice"></span>
-                    <span class="footer-input"></span>
-                    <span class="footer-round footer-stick"></span>
-                    <span class="footer-round footer-more"></span>            
-            </footer>
-            <script>
-                var footer = document.querySelector('.footer');
-                var flag = true;
-                footer.addEventListener('click', function(){
-                    var cp = document.querySelector('.chat-page');
-                    if(flag){
-                        cp.className = cp.className + " selecting";
-                    } else {
-                        cp.className = cp.className.replace(" selecting", "");
-                    }
-                    flag = !flag;
-                }, false);
-            </script>
         </main>
-        
+        <footer class="footer">
+                <span class="footer-round footer-voice"></span>
+                <span class="footer-input"></span>
+                <span class="footer-round footer-stick"></span>
+                <span class="footer-round footer-more"></span>            
+        </footer>
         <div class="selector">
-            <div class="message-item message-item-right">
+            <div id="answer1" class="message-item message-item-right">
                 <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
                 <span class="message-bubble-angle"></span>
                 <div class="message-bubble">
-                    <p>没有啊，怎么了？</p>
+                    <p id="a1">我八点醒了一次，去吃完了</p>
                 </div>
             </div>
-            <div class="message-item message-item-right">
+            <div id="answer2" class="message-item message-item-right">
                 <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
                 <span class="message-bubble-angle"></span>
                 <div class="message-bubble">
-                    <p>我八点醒了一次，去吃完了</p>
+                    <p id="a2">没有啊，怎么了？</p>
                 </div>
             </div>
-            <div class="message-item message-item-right">
+            <div id="answer3" class="message-item message-item-right">
                 <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
                 <span class="message-bubble-angle"></span>
                 <div class="message-bubble">
-                    <p>开玩笑，我在学校从来不吃早饭！</p>
+                    <p id="a3">开玩笑，我在学校从来不吃早饭！</p>
                 </div>
             </div>
         </div>
+        <!-- <div id="final-tip">
+            <p id="final-tip-text"></p>
+        </div> -->
     </section>
+    <script src="js.js"></script>
 </body>
 </html>

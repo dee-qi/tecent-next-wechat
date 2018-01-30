@@ -1,5 +1,10 @@
+/* author:7d
+腾讯NEXT前端特训班结业项目 */
+
 body {
     background: red;
+    overflow:scroll;  
+    overflow-y:hidden;
 }
 
 /*First Page*/
@@ -32,6 +37,10 @@ body {
     padding: 6px 18px;
     margin-top: 40px;
     border-radius: 4px;
+}
+
+.first-page-text {
+    
 }
 
 /*Chat Page*/
@@ -93,7 +102,7 @@ body {
     right: 0;
     bottom: 50px;
     background: #ebebeb;
-    transition: bottom 1s;
+    transition: bottom 0.5s;
 }
 
 .avatar {
@@ -105,6 +114,7 @@ body {
 .message-item {
     display: flex;
     margin-top: 10px;
+    /* cursor: pointer; */
 }
 
 .message-item-right {
@@ -172,9 +182,14 @@ body {
     height: 50px;
     border-top: 1px solid #ddd;
     background: #fff;
-    margin-bottom: -50px;
+    /* margin-bottom: -50px; */
     display: flex;
     align-items: center;
+    transition: bottom 0.5s;
+}
+
+.selecting .footer {
+    bottom: 200px;
 }
 
 .footer-round {
@@ -221,17 +236,31 @@ body {
     position: absolute;
     left: 0;
     bottom: -200px;
-    display: none;
-    background: #ebebeb;
-
-    transition: bottom 1s;
-}
-
-.selecting .selector {
     display: flex;
-    bottom: 0px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #ebebeb;
+    transition: bottom 0.5s;
 }
 
+.selecting .selector {
+    bottom: 0px;
+}
+
+
+/* #final-tip {
+    display: none;
+    width: 60%;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    background: #fff;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd; 
+} */
