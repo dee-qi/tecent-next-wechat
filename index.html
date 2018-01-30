@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeChat</title>
+    <link rel="stylesheet" type="text/css" 
+    href='http://8.url.cn/edu/classroom/assets/lib/reset.css'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="javascript" src="js.js">
+</head>
+<body>
+    <section class="first-page hide">
+        <p class="first-page-text">一段话</p>
+        <button class="first-page-button">点击继续</button>
+    </section>
+    <section class="chat-page">
+        <header class="nav">
+            <div class="nav-back">
+                <i class="icon icon-back"></i>
+                <span>微信</span>
+            </div>
+            <h1 class="nav-name">老妈</h1>
+            <div class="nav-person">
+                <i class="icon icon-person"></i>
+            </div>
+        </header>
+        <main class="chat-list">
+            <div class="message-item">
+                <img class="avatar" src="./avatar/avatar1.jpg" alt="头像1">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>今天几点起床的？？</p>
+                </div>
+            </div>
+            <div class="message-item message-item-right">
+                <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>十点半吧</p>
+                </div>
+            </div>
+            <div class="message-item">
+                <img class="avatar" src="./avatar/avatar1.jpg" alt="头像1">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>那你吃早饭了吗！！！？？？</p>
+                </div>
+            </div>
+            <footer class="footer">
+                    <span class="footer-round footer-voice"></span>
+                    <span class="footer-input"></span>
+                    <span class="footer-round footer-stick"></span>
+                    <span class="footer-round footer-more"></span>            
+            </footer>
+            <script>
+                var footer = document.querySelector('.footer');
+                var flag = true;
+                footer.addEventListener('click', function(){
+                    var cp = document.querySelector('.chat-page');
+                    if(flag){
+                        cp.className = cp.className + " selecting";
+                    } else {
+                        cp.className = cp.className.replace(" selecting", "");
+                    }
+                    flag = !flag;
+                }, false);
+            </script>
+        </main>
+        
+        <div class="selector">
+            <div class="message-item message-item-right">
+                <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>没有啊，怎么了？</p>
+                </div>
+            </div>
+            <div class="message-item message-item-right">
+                <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>我八点醒了一次，去吃完了</p>
+                </div>
+            </div>
+            <div class="message-item message-item-right">
+                <img class="avatar" src="./avatar/avatar2.jpg" alt="头像2">
+                <span class="message-bubble-angle"></span>
+                <div class="message-bubble">
+                    <p>开玩笑，我在学校从来不吃早饭！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
