@@ -74,9 +74,6 @@ score = 0;//最后得分
 
 //三个回答全部结束，结算结果的方法
 function answerDone(){
-    cp.className = cp.className.replace(' selecting', '');
-    footer.removeEventListener('click', handler);
-
     if(score < 4){
         chatList.appendChild(newChatItem('真是个好孩子!', true));
     } else if(score < 8){
@@ -84,16 +81,21 @@ function answerDone(){
     } else {
         chatList.appendChild(newChatItem('我回去就打死你!', true));
     }
+}
 
+function newLeft(){
+    chatList.appendChild(newChatItem(questionList[counter], true));
 }
 
 //每次回答之后更新Selector里的内容
-function refreshSelector(counter){
+function refreshSelector(){
+    console.log('refresh', counter);
     var mList = counter === 0?aList1:aList2;
     document.getElementById('a1').innerText = mList[0];
     document.getElementById('a2').innerText = mList[1];
     document.getElementById('a3').innerText = mList[2];
 }
+
 
 //Selector内元素的点击事件处理
 function selectorHandler(event){
@@ -103,14 +105,19 @@ function selectorHandler(event){
     score += parseInt(tag.substring(1));
     counter ++;
 
-    if(counter != 2) chatList.appendChild(newChatItem(questionList[counter], true));    
-    if(counter === 2) answerDone();
-
+    if(counter != 2) setTimeout(newLeft, 1000);
+    if(counter === 2) {
+        cp.className = cp.className.replace(' selecting', '');
+        footer.removeEventListener('click', handler);
+        setTimeout(answerDone, 1000);
+        // answerDone();
+    }
     //每次选择答案后，隐藏Selector区
     cp.className = cp.className.replace(' selecting', '');
     flag = !flag;
 
-    refreshSelector(counter);
+    setTimeout(refreshSelector,500);
+    // refreshSelector(counter);
 }
 
 answer1.addEventListener('click', selectorHandler, false);
