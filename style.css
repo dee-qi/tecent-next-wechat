@@ -2,9 +2,9 @@
 腾讯NEXT前端特训班结业项目 */
 
 body {
-    background: red;
     overflow:scroll;  
     overflow-y:hidden;
+    height: 100%
 }
 
 /*First Page*/
@@ -19,10 +19,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.hide {
-    display: none;
 }
 
 .first-page p {
@@ -44,6 +40,12 @@ body {
 }
 
 /*Chat Page*/
+
+.chat-page {
+    width: 100%;
+    height: 100%;
+}
+
 .nav {
     height: 44px;
     width: 100%;
@@ -143,16 +145,16 @@ body {
 }
 
 .message-item-right .message-bubble {
-    background: #afe46d;
-    border: 1px solid #97ca62;
+    background: #9fe759;
+    border: 1px solid #87cd51;
 }
 
 .message-item-right .message-bubble-angle {
-    background: #afe46d;
+    background: #9fe759;
     border-bottom: 0;
     border-left: 0;
-    border-top: 1px solid #97ca62;
-    border-right: 1px solid #97ca62;
+    border-top: 1px solid #87cd51;
+    border-right: 1px solid #87cd51;
 }
 
 /* .message-bubble::before {
@@ -247,19 +249,52 @@ body {
     bottom: 0px;
 }
 
+.final-tips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
-/* #final-tip {
-    display: none;
-    width: 60%;
-    height: 100px;
+.tips-container {
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-10%);
+    padding: 20px;
+}
+
+.tips-text {
+    width: 100%;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tips-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-replay {
+    width: 40px;
+    height: 40px;
+    background-image: url('./icon/replay.svg');
+}
+
+.shadow {
+    height: 100%;
+    width: 100%;
+    background: #2b2b2b;
+    opacity: 0.7;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
-    background: #fff;
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd; 
-} */
+}
+.hide {
+    display: none;
+}

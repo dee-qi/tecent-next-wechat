@@ -74,13 +74,26 @@ score = 0;//最后得分
 
 //三个回答全部结束，结算结果的方法
 function answerDone(){
+    var results = [
+        '你妈妈又觉得你是个好孩子了呢！',
+        '你妈妈觉得你没救了。',
+        '亲，快找个地方躲起来吧！',
+    ]
+    var tag = 0;
     if(score < 4){
         chatList.appendChild(newChatItem('真是个好孩子!', true));
     } else if(score < 8){
         chatList.appendChild(newChatItem('唉，朽木难雕!', true));
+        tag = 1;
     } else {
         chatList.appendChild(newChatItem('我回去就打死你!', true));
+        tag = 2;
     }
+    setTimeout(()=>{
+        var tips = document.querySelector('.final-tips');
+        tips.querySelector('.tips-text').innerText = results[tag];
+        tips.className = tips.className.replace(' hide', '');
+    }, 1000);
 }
 
 function newLeft(){
@@ -123,3 +136,6 @@ function selectorHandler(event){
 answer1.addEventListener('click', selectorHandler, false);
 answer2.addEventListener('click', selectorHandler, false);
 answer3.addEventListener('click', selectorHandler, false);
+document.querySelector('.icon-replay').addEventListener('click', (event) => {
+    window.location.reload()
+  })
